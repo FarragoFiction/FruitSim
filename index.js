@@ -35,18 +35,25 @@ const getFruitName = () => {
     `${pickARandomThemeFromListAndGrabKey(theme_keys, LOCATION, true)}'s ${name}`
   ];
 
-  return pickFrom(possibilities);
+  return titleCase(pickFrom(possibilities));
 }
 
 
-const addFruit = (parent)=>{
+const addFruit =  async (parent)=>{
   const name = getFruitName();
-  const image = pickFrom(fruit);
+  const image = fruit_source + pickFrom(fruit);
   const container = createElementWithClassAndParent("div",parent,"fruit-container");
 
-  const imageElement = createElementWithClassAndParent("img",container,"fruit-img");
-  imageElement.src = fruit_source+image;
-  console.log("JR NOTE: tried to make the fruit", imageElement.src);
+
+
+  let canvas = document.createElement("canvas");
+  canvas.width = 50;
+  canvas.height = 50;
+
+   await kickoffImageRenderingToCanvas(image,canvas);
+   container.append(canvas);
+
+
   const nameElement = createElementWithClassAndParent("div",container,"fruit-name");
   nameElement.innerText = name;
 }

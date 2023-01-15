@@ -46,6 +46,7 @@ body {
   padding: 5px;
   flex-direction: row;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .fruit-container:hover{
