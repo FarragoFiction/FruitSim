@@ -6,6 +6,7 @@
 body {
   background-color: black;
   color: white;
+  margin:0px;
   margin: 0px;
   overflow: auto;
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -36,6 +37,8 @@ body {
   top: 100px;
   padding: 11px;
   max-width: 300px;
+  z-index: 4;
+
 
 }
 
@@ -76,6 +79,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  z-index: 3;
+
 
 
 }
@@ -87,6 +92,8 @@ body {
   position: relative;
   height: 640px;
   width: 640px;
+  z-index: 2;
+
 }
 
 
@@ -96,16 +103,24 @@ body {
   position: fixed;
   top: 0px;
   left: 0px;
-  pointer-events: none;
-  z-index: -1;
+  z-index: 1;
 }
 
 
 :root {
   --width: 300px;
-  --x-speed: 13s;
+  --x-turtle: 60s;
+  --y-turtle: 60s;
+  --x-speed: 7s;
   --y-speed: 7s;
-  --transition-speed: 2.2s;
+  --x-speed-fast: 3s;
+  --y-speed-fast: 3s;
+  --x-speed-zip: 1s;
+  --y-speed-zip: 1s;
+}
+
+.el-wrap{
+  position: absolute;
 }
 
 .el { 
@@ -118,6 +133,26 @@ body {
 }
 .y {
   animation: y var(--y-speed) linear infinite alternate;
+}
+.x-fast {
+  animation: x var(--x-speed-fast) linear infinite alternate;
+}
+.y-fast{
+  animation: y var(--y-speed-fast) linear infinite alternate;
+}
+
+.x-zip {
+  animation: x var(--x-speed-zip) linear infinite alternate;
+}
+.y-zip{
+  animation: y var(--y-speed-zip) linear infinite alternate;
+}
+
+.x-turtle {
+  animation: x var(--x-speed-turtle) linear infinite alternate;
+}
+.y-turtle{
+  animation: y var(--y-speed-turtle) linear infinite alternate;
 }
 
 @keyframes x {

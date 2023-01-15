@@ -7,24 +7,25 @@ window.onload = () => {
 
   initThemes();
   startFruitSelling();
-  
+
 }
 
-const startFruitSelling = async ()=>{
+const startFruitSelling = async () => {
   fruit = await getImages(fruit_source);
   pickFourFruit();
 }
 
-const pickFourFruit = ()=>{
+const pickFourFruit = () => {
   const container = document.querySelector(".sales-pitch");
-  for(let i=0; i<4; i++){
-    addFruit(container);
+  container.innerHTML = "";
+  for (let i = 0; i < 4; i++) {
+    addFruit(container, i);
   }
 
 }
 
 const getFruitName = () => {
-  let theme_keys = [pickFrom(Object.keys(all_themes)),pickFrom(Object.keys(all_themes))];
+  let theme_keys = [pickFrom(Object.keys(all_themes)), pickFrom(Object.keys(all_themes))];
 
   let name = pickFrom(fruit_words);
 
@@ -40,10 +41,10 @@ const getFruitName = () => {
 }
 
 
-const addFruit =  async (parent)=>{
+const addFruit = async (parent, id) => {
   const name = getFruitName();
   const image = fruit_source + pickFrom(fruit);
-  const container = createElementWithClassAndParent("div",parent,"fruit-container");
+  const container = createElementWithClassAndParent("div", parent, "fruit-container");
 
 
 
@@ -51,39 +52,42 @@ const addFruit =  async (parent)=>{
   canvas.width = 50;
   canvas.height = 50;
 
-   await kickoffImageRenderingToCanvas(image,canvas);
-   container.append(canvas);
+  await kickoffImageRenderingToCanvas(image, canvas);
+  container.append(canvas);
 
 
-  const nameElement = createElementWithClassAndParent("div",container,"fruit-name");
+  const nameElement = createElementWithClassAndParent("div", container, "fruit-name");
   nameElement.innerText = name;
-  container.onclick = ()=>{
-    bounceTime(canvas)
+  container.onclick = () => {
+    bounceTime(canvas, id);
+    pickFourFruit();
   }
 }
 
 
 //https://css-tricks.com/bounce-element-around-viewport-in-css/
-const bounceTime = (canvas)=>{
+const bounceTime = (canvas, id) => {
+  console.log("JR NOTE: its bounce time", id)
   //multiple things we wanna do. first is just bounce it around as is
   //then give it three frames of animation (same as LOGAC) that makes it staticky
-  if(!bounce_container){
+  if (!bounce_container) {
     bounce_container = document.querySelector("#bounce-container");
-    /*
-    <div class="el-wrap x">
-      <div class="el y"></div>
-    </div>
-    */
-    const elWrap = createElementWithClassAndParent("div",bounce_container,"el-wrap x");
-
-    const el = createElementWithClassAndParent("img",elWrap,"el y");
-    el.style.width = "50px";
-    el.style.height = "50px";
-    el.style.border = "1px solid white";
-    el.style.backgroundImage = `url(${canvas.toDataURL()})`;
-
-
   }
+  /*
+  <div class="el-wrap x">
+    <div class="el y"></div>
+  </div>
+  */
+   const xAnimations = ["x","x-fast","x-zip","x-turtle"];
+   const yAnimations = ["y","y-fast","y-zip","y-turtle"];
+  const elWrap = createElementWithClassAndParent("div", bounce_container, `el-wrap ${pickFrom(xAnimations)}`);
+  elWrap.style.left = `${getRandomNumberBetween(0,100)}vw`;
+  elWrap.style.top = `${getRandomNumberBetween(0,100)}vh`;
+  console.log("JR NOTE: elwrap style",elWrap)
+  const el = createElementWithClassAndParent("div", elWrap, `el ${pickFrom(yAnimations)}`);
+  el.style.width = "50px";
+  el.style.height = "50px";
+  el.style.backgroundImage = `url(${canvas.toDataURL()})`;
 
 }
 
