@@ -111,15 +111,6 @@ const understandImage = (canvas) => {
 
 }
 
-//can do so many if you want
-const glitchCascade = (canvas, odds) => {
-  // console.log("JR NOTE: odds are",odds/100)
-  applyGlitch(canvas);
-  if (Math.random() > odds / 100) {
-    glitchCascade(canvas, odds + Math.random() * (100 / glitchesFound));
-  }
-}
-
 
 
 const isThisPixelRelevant = (x, y, virtual_canvas, most_frequent_color) => {
@@ -152,42 +143,8 @@ const handleMouseMoveEvents = (canvas, virtual_canvas, most_frequent_color) => {
   }
 }
 
-//why YES that means even if you share a link sometimes it goes somewhere you don't expect.
-const newPictureButInitial = (canvas) => {
-
-  const ods = Math.random();//true random because otherwise it tends to cluster
-  if (ods < 0.95) {
-    newHallway(canvas);
-  } else {
-    newRoom(canvas);
-  }
-  getQuipFor(canvas, chosen_image, currently_room);
-
-}
-
-const newPicture = (canvas, quadrant) => {
-  clearNonGlitchMusic();
-  const new_seed = Math.abs(all_images.indexOf(chosen_image) * 1000) * quadrant * 100 + quadrant;
-  rand = new SeededRandom(new_seed);
-  updateURLParams("seed=" + rand.initial_seed);
-
-  const ods = Math.random();
-  if (ods < 0.55) {
-    newHallway(canvas);
-  } else {
-    newRoom(canvas);
-  }
-
-  let metaQuips = [];
-  metaQuips = metaQuips.concat(getReferrerDetailsQuips());
-  metaQuips = metaQuips.concat(getReferrerQuips());
-  let tmp = rand.pickFrom(metaQuips);
-  let chosen_meta = tmp ? "<br><Br>" + tmp + "<br><Br>" : "";
 
 
-  message(`Stability: ${getStability()}%. ${glitchesFound > 0 ? glitchesFound + "." : ""} <br><br>` + getQuipFor(canvas, chosen_image, currently_room) + chosen_meta)
-
-}
 
 
 

@@ -1,6 +1,7 @@
 
 const fruit_source = `http://farragofiction.com/DollSource/images/Fruit/Body/`;
 
+let bounce_container;
 let fruit = [];
 window.onload = () => {
 
@@ -56,6 +57,34 @@ const addFruit =  async (parent)=>{
 
   const nameElement = createElementWithClassAndParent("div",container,"fruit-name");
   nameElement.innerText = name;
+  container.onclick = ()=>{
+    bounceTime(canvas)
+  }
+}
+
+
+//https://css-tricks.com/bounce-element-around-viewport-in-css/
+const bounceTime = (canvas)=>{
+  //multiple things we wanna do. first is just bounce it around as is
+  //then give it three frames of animation (same as LOGAC) that makes it staticky
+  if(!bounce_container){
+    bounce_container = document.querySelector("#bounce-container");
+    /*
+    <div class="el-wrap x">
+      <div class="el y"></div>
+    </div>
+    */
+    const elWrap = createElementWithClassAndParent("div",bounce_container,"el-wrap x");
+
+    const el = createElementWithClassAndParent("img",elWrap,"el y");
+    el.style.width = "50px";
+    el.style.height = "50px";
+    el.style.border = "1px solid white";
+    el.style.backgroundImage = `url(${canvas.toDataURL()})`;
+
+
+  }
+
 }
 
 
