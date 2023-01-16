@@ -67,7 +67,7 @@ const addFruit = async (parent, id) => {
 
 //https://css-tricks.com/bounce-element-around-viewport-in-css/
 const bounceTime = (canvas, id) => {
-  console.log("JR NOTE: its bounce time", id)
+  let animation_frame_sheet = transformCanvasIntoAnimationWithTransform(canvas,[turnToPureStatic,turnToPartialStatic,turnToPureStatic]);
   //multiple things we wanna do. first is just bounce it around as is
   //then give it three frames of animation (same as LOGAC) that makes it staticky
   if (!bounce_container) {
@@ -78,16 +78,22 @@ const bounceTime = (canvas, id) => {
     <div class="el y"></div>
   </div>
   */
-   const xAnimations = ["x","x-fast","x-zip","x-turtle"];
-   const yAnimations = ["y","y-fast","y-zip","y-turtle"];
+ //ternary is so i can debug it without it zipping about
+   const xAnimations = false? ["x-turtle"]: ["x","x-fast","x-zip","x-turtle"];
+   const yAnimations = false? ["y-turtle"]:["y","y-fast","y-zip","y-turtle"];
   const elWrap = createElementWithClassAndParent("div", bounce_container, `el-wrap ${pickFrom(xAnimations)}`);
   elWrap.style.left = `${getRandomNumberBetween(0,100)}vw`;
   elWrap.style.top = `${getRandomNumberBetween(0,100)}vh`;
-  console.log("JR NOTE: elwrap style",elWrap)
   const el = createElementWithClassAndParent("div", elWrap, `el ${pickFrom(yAnimations)}`);
   el.style.width = "50px";
   el.style.height = "50px";
-  el.style.backgroundImage = `url(${canvas.toDataURL()})`;
+
+  const graphic = createElementWithClassAndParent("div", el, `animated_bg`);
+  graphic.style.backgroundImage = `url(${animation_frame_sheet.toDataURL()})`;
+
+
+//JR NOTE: to debug
+  //bounce_container.append(animation_frame_sheet);
 
 }
 

@@ -9,6 +9,37 @@ const kickoffImageRenderingToCanvas = (source, canvas) => {
   img.src = source;
 }
 
+//takes in a base canvas and applys each transform individually to get a css animation on the bg
+//transform array is an array of functions that take in a canvas and do operations on it
+const transformCanvasIntoAnimationWithTransform = (canvas, transform_array) => {
+  const original = document.createElement("canvas");
+  const context = original.getContext("2d");
+  context.drawImage(canvas, 0, 0);
+
+  const bigBoi = document.createElement("canvas");
+  bigBoi.width = canvas.width * transform_array.length;
+  bigBoi.height = canvas.height;
+  const bigContext = bigBoi.getContext("2d");
+  let index = 0;
+  for (let transform of transform_array) {
+    console.log("JR NOTE: i is",index)
+    const copy = document.createElement("canvas");
+    const context = copy.getContext("2d");
+    context.drawImage(original, 0, 0);
+    transform(copy);
+    bigContext.drawImage(copy,canvas.width * index,0);
+
+    console.log("JR NOTE: did i draw at x",canvas.width * index)
+
+    index++;
+
+  }
+  //bigContext.drawImage(original,25,25);
+
+
+  return bigBoi;
+}
+
 //given an already loaded image, render it to the target canvas.
 const renderImageToCanvas = (img, canvas) => {
   const context = canvas.getContext("2d");
@@ -30,7 +61,6 @@ const randomizeColors = (canvas) => {
   if (!ctx) {
     return;
   }
-  console.log("JR NOTE: color???")
   var output = ctx.getImageData(0, 0, canvas.width, canvas.height);
   var d = output.data;
   for (var i = 0; i < d.length; i += 4) {
@@ -51,19 +81,42 @@ const randomizeColors = (canvas) => {
 }
 
 //doesn't care about palettes. just for every color it finds shoves it in a hash map and refers to it later
-const turnToStatic = (canvas) => {
+const turnToPureStatic = (canvas) => {
+  console.log("JR NOTE: static",canvas)
   //key is color in original image, value is color in new image
   let remembered_colors = {}
   var ctx = canvas.getContext('2d', { willReadFrequently: true });
   if (!ctx) {
     return;
   }
-  console.log("JR NOTE: color???")
   var output = ctx.getImageData(0, 0, canvas.width, canvas.height);
   var d = output.data;
   let offset = 0;
   for (var i = 0; i < d.length; i += 4) {
     if (d[i + 3] > 0) {
+      d[i] = getRandomNumberBetween(0, 255)
+      d[i + 1] = getRandomNumberBetween(0, 255);
+      d[i + 2] = getRandomNumberBetween(0, 255);
+    }
+
+
+  }
+  ctx.putImageData(output, 0, 0);
+}
+
+//doesn't care about palettes. just for every color it finds shoves it in a hash map and refers to it later
+const turnToPartialStatic = (canvas) => {
+  //key is color in original image, value is color in new image
+  let remembered_colors = {}
+  var ctx = canvas.getContext('2d', { willReadFrequently: true });
+  if (!ctx) {
+    return;
+  }
+  var output = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  var d = output.data;
+  let offset = 0;
+  for (var i = 0; i < d.length; i += 4) {
+    if (d[i + 3] > 0 && Math.random()>0.35) {
       d[i] = getRandomNumberBetween(0, 255)
       d[i + 1] = getRandomNumberBetween(0, 255);
       d[i + 2] = getRandomNumberBetween(0, 255);

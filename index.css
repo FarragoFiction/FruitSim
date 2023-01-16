@@ -96,6 +96,16 @@ body {
 
 }
 
+.animated_bg{
+  animation: animated-bg-animation  0.4s steps(3) infinite;
+  width: 50px;
+  height: 50px;
+}
+
+@keyframes animated-bg-animation {
+  100% { background-position: -150px; }
+}
+
 
 #bounce-container{
   width: 100vw;
@@ -165,3 +175,4 @@ body {
     transform: translateY(calc(100vh - var(--width)));
   }
 }
+
