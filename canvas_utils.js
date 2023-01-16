@@ -22,14 +22,12 @@ const transformCanvasIntoAnimationWithTransform = (canvas, transform_array) => {
   const bigContext = bigBoi.getContext("2d");
   let index = 0;
   for (let transform of transform_array) {
-    console.log("JR NOTE: i is",index)
     const copy = document.createElement("canvas");
     const context = copy.getContext("2d");
     context.drawImage(original, 0, 0);
     transform(copy);
     bigContext.drawImage(copy,canvas.width * index,0);
 
-    console.log("JR NOTE: did i draw at x",canvas.width * index)
 
     index++;
 
@@ -82,7 +80,6 @@ const randomizeColors = (canvas) => {
 
 //doesn't care about palettes. just for every color it finds shoves it in a hash map and refers to it later
 const turnToPureStatic = (canvas) => {
-  console.log("JR NOTE: static",canvas)
   //key is color in original image, value is color in new image
   let remembered_colors = {}
   var ctx = canvas.getContext('2d', { willReadFrequently: true });
