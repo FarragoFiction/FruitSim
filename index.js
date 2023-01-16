@@ -59,9 +59,37 @@ const addFruit = async (parent, id) => {
   const nameElement = createElementWithClassAndParent("div", container, "fruit-name");
   nameElement.innerText = name;
   container.onclick = () => {
+    quip(id);
     bounceTime(canvas, id);
     pickFourFruit();
   }
+}
+
+let first_index = 0;
+let second_index = 0;
+let third_index = 0;
+let fourth_index = 0;
+
+const quip = (id)=>{
+  if(id === 0){
+    renderQuip(convo1[first_index%convo1.length]);
+    first_index++;
+  }else if (id === 1){
+    renderQuip(convo2[second_index%convo2.length]);
+    second_index++;
+  }else if(id === 2){
+    renderQuip(convo3[third_index%convo3.length]);
+    third_index++;
+  }else{
+    renderQuip(convo4[fourth_index%convo4.length]);
+    fourth_index++;
+  }
+}
+
+const renderQuip = (text)=>{
+  const ele = document.querySelector(".quip-content");
+  ele.innerText = text;
+
 }
 
 
