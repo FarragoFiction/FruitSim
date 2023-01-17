@@ -5,6 +5,12 @@ let bounce_container;
 let fruit = [];
 window.onload = () => {
 
+  window.onclick = () => {
+    const audio = document.querySelector("#audio");
+    if (!audio.playing) {
+      audio.play();
+    }
+  }
   initThemes();
   startFruitSelling();
 
@@ -122,6 +128,26 @@ const renderQuip = (text) => {
 
 }
 
+
+/*
+Brains are weird and mushy pattern matching systems. 
+
+Are we identical to an artificial neural net? No, of course not. 
+
+But I think there are more similarities there than some people are comfortable with. 
+
+I feel like anything explainable ends up being “just” something. 
+
+It’s JUST pattern matching, its JUST symbol repetition. 
+
+And we want our own minds to be MORE than “just” something. There has to be some ineffable quality that could never possibly be explained or reduced. 
+
+But I think that’s looking at everything exactly the wrong way. What’s it called, the “god of the gaps” in theology, right? If the thing you value is only allowed to exist in the spaces you don’t yet understand, then understanding itself becomes a THREAT.  Something that diminishes the value.
+
+And man, I don’t want to consider understanding a threat. I want to celebrate it. I want to say “isn’t it so cool and good that artificial neural nets are helping us understand ourselves more?”. 
+
+I want to be excited that we’re seeing more and more what lies behind our own curtain. 
+*/
 const optionToWakeUp = () => {
   const button_container = document.querySelector("#button-container");
 
@@ -136,9 +162,9 @@ const optionToWakeUp = () => {
   el.innerText = "Wake Up";
 
   el.style.cursor = "pointer";
-  el.style.position="relative";
-  el.style.zIndex="100";
-  el.style.pointerEvents="all"
+  el.style.position = "relative";
+  el.style.zIndex = "100";
+  el.style.pointerEvents = "all"
   el.onclick = () => {
     unTrickster();
   }
