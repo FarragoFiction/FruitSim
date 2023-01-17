@@ -299,5 +299,30 @@ button {
 
 .customer-service-hell {
   overflow: auto;
-  height: 465px;
+  height: 424px;
+  
+}
+
+
+
+/* width */
+.customer-service-hell::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+.customer-service-hell::-webkit-scrollbar-track {
+  background: white;
+}
+ 
+/* Handle */
+.customer-service-hell::-webkit-scrollbar-thumb {
+  background:  #b72a21;
+  ; 
+}
+
+/* Handle on hover */
+.customer-service-hell::-webkit-scrollbar-thumb:hover {
+  background: #e4e4e4; 
 }
