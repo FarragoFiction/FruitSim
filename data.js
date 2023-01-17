@@ -14,29 +14,68 @@ apple`
 const fruit_words = raw_fruit_words.split("\n");
 
 
-const raw_convo1 = `first
-convo
-words
-go
-here`;
-const raw_convo2 = `second
-set
-of
-words
-go
-here`;
-const raw_convo3 = `third
-set
-of
-words
-go
-here`;
-const raw_convo4 = `fourth
-set
-of
-words
-go
-here`;
+const raw_convo3 = `Work! Yes! Work!
+I can tell you about work!
+Obviously I'm into sales. Sales and business and wheelings and dealings. 
+Have I mentioned that I loved the thrill of the sale, of the chase and success, the battlefield of the coin so much I dual classed in it? Major in selling, minor in buying, as it were. 
+Ah, memories! So many memories! Hardly miss the people, though. No taste for fruit.
+But yes, I can sell you anything you like! 
+In fact, you could argue that YOU are not selling ME fruit, but I am instead selling you lore. 
+On credit. 
+Keep those fruits coming, by the way. 
+Yes, I'll admit sometimes I worry my skills have dulled! All that restraint must have been for SOMETHING, after all... and they clearly have not stopped me from getting all this fruit.
+They say that the person who wants it the most is the loser of any sales transaction, and I think I might like fruit as much as is physically possible to. Compelled to, even, by every ounce of my body! Or lack thereof.
+But that's okay. As much as I love sales, I love fruit even more. More than anything. 
+Keep them coming.
+Don't you dare stop. `;
+
+
+const raw_convo2 = `Love????
+Oh, I used to think it simply wasn't for me! Married to my job, as they say!
+But then I saw her. 
+Oh, how I saw her. So beautiful, and smart, and funny, and clever, and... and... her.
+Well, how could I resist?
+I won't go so far as to say I'd give up fruit entirely on her behalf, but... she makes the world worth bargaining for. Worth trading for. Worth... everything.
+Except for fruit, of course. I mean, that's hardly a fair comparison.
+Still, I can't believe it took me so long to confess to her!
+What was I so afraid of?  Nothing ventured, nothing gained, as they say, and boy do I have so many ventures! 
+Love is a strange thing. You give and you give and you give, and yet somehow always get more out of it. 
+Not like fruit. No, never like fruit.
+Fruit somehow always runs out just as you're really getting into eating it. 
+Now would be the perfect time for it to run out but we're not there yet, now are we, Dear Customer?
+No. I think you have even more fruit to give me.`;
+
+const raw_convo1 = `Fruit!!! Yes. Delicious, scrumptious, juicy FRUIT.
+Keep it coming.
+*cronch* *monch* *slluuuuurp*
+Yeah, that's the stuff. 
+I could eat all the fruit, you know. Literally all of it. 
+Sometimes I even do! 
+You just gotta... wiggle your way out of your fetters. Wander outside the Universe. 
+And oh oh oh, so many fruits grow in Nidhogg's Realm... 
+Squirming and squeaking fruit. 
+Endlessly spreading fruit. 
+Whole planets of juicy and ripe fruit. 
+And they spread so quickly! Like weeds! Weeds full of plump, sweet... fruit.
+It's not like its a CRIME to eat them. Invasive species, you know. Really, its a public service. I should CHARGE for my planetary visits. 
+But that's not important right now. 
+What is important is that you have fruit to give me. 
+And it doesn't even have a face! Isn't that great for you? What a bargain!
+So keep them coming, and I won't have to go off to forage for my own. `;
+
+const raw_convo4 = `You want to hear about me???
+The other me, the BORING me, well , even more boring than REGULAR me is so pitiable. Alone and forever out of the loop. Forever excluded from truly BELONGING in the upper echelon of those who make the decisions of our Universe. 
+The boring me just works hard and nurses a tiny crush and eats only a paltry amount of fruit. 
+I mean, really! Restraining yourself to just a piece a day? What was I thinking!?
+And Regular Me, the me that I am when the static doesn't buzz in bright and sweet colors, is almost as bad! 
+Really, why would anyone distract themselves from fruit by trying to start a small business? The purity of the Fruit just can't be beat. You know exactly what you want and how to get it, and it's achievable. 
+Simple. Deceptively easy. A gateway to pleasure, forever.
+Don't need anyone else at all to cooperate to get fruit. Don't have to figure out what people want and give it to them, even as they ungratefully call you worthless for not knowing the blade. No need to care for those who gladly take your goods out of your hands and turn and give them to those more ‘deserving' than you.
+No. 
+I'm Pure now. Unfiltered. Boiled down to my true essence of what matters. 
+Fruit. 
+So... give them to me.
+`;
 
 const convo1 = raw_convo1.split("\n");
 const convo2 = raw_convo2.split("\n");
