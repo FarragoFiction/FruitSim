@@ -27,6 +27,15 @@ body {
   }
 }
 
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-1px);
+  }
+}
+
 .rainbow-text {
   -webkit-background-clip: text;
   background-image: linear-gradient(270deg, violet, indigo, blue, green, #ff0, orange, red);
@@ -52,6 +61,7 @@ body {
   padding: 11px;
   max-width: 200px;
   z-index: 4;
+  animation: shake 0.8s linear infinite
 
 
 }
