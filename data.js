@@ -74,8 +74,7 @@ Don't need anyone else at all to cooperate to get fruit. Don't have to figure ou
 No. 
 I'm Pure now. Unfiltered. Boiled down to my true essence of what matters. 
 Fruit. 
-So... give them to me.
-`;
+So... give them to me.`;
 
 const convo1 = raw_convo1.split("\n");
 const convo2 = raw_convo2.split("\n");
