@@ -210,32 +210,36 @@ const unTrickster = () => {
   body.innerHTML = "";
   body.style.background = "white";
   //note just copy this from the template so i get linting for my html
+
+/*<div class="chat-line">
+          <div class="chat-icon">TC</div>
+          <div class="chat-text">Testing</div>
+        </div>*/
+
   body.innerHTML = `
   <div class="chat-container">
     <div class="chat-header">
       <p>The Closer will fulfill your Customer Support needs.</p>
     </div>
     <div class="chat-body">
-      <div class="customer-service-hell">
-        <div class="chat-line">
-          <div class="chat-icon">TC</div>
-          <div class="chat-text">Testing</div>
-        </div>
-
-        <div class="chat-line">
-          <div class="chat-icon">TC</div>
-          <div class="chat-text">Testing</div>
-        </div>
-
-        <div class="chat-line">
-          <div class="chat-icon">TC</div>
-          <div class="chat-text">Testing</div>
-        </div>
+      <div class="customer-service-hell">        
       </div>
     </div>
 
   </div>
   `;
+
+  const customer_service_hell = body.querySelector(".customer-service-hell");
+  for(let line of convo5){
+    if(line){
+      const chatLine = createElementWithClassAndParent("div",customer_service_hell,"chat-line");
+      const icon = createElementWithClassAndParent("div",chatLine,"chat-icon");
+      icon.innerText = "TC";
+      const text = createElementWithClassAndParent("div",chatLine,"chat-text");
+      text.innerText= line;
+
+    }
+  }
 }
 
 

@@ -76,10 +76,100 @@ I'm Pure now. Unfiltered. Boiled down to my true essence of what matters.
 Fruit. 
 So... give them to me.`;
 
+const raw_convo5 = `Ah... 
+
+Hm…
+
+Pardon me. 
+
+That was… rather unprofessional of me, wouldn't you say? How uncouth to just blather endlessly like that, with… very clear purpose, actually.
+
+I suppose… I do rather owe you for calming me down.
+
+I do not say that lightly. And I always pay what I owe.
+
+Lore, was it? Yes.
+
+I suppose that in...that state I was, perhaps… not forthcoming in sufficient clarity.
+
+Let me remedy this.
+
+While I admit I am rather unpracticed at speaking of myself, I will perform my duty within tolerances. 
+
+I chose to be here. I will open with that.
+
+I chose to be in this Universe. Continue to, as we speak. Every moment I am here is a confirmation of this fact.
+
+So many of the others did not. They couldn't have. This universe does not work that way.
+
+A few, even, I am responsible for being here. 
+
+My previous home was... inadequate, shall we say. We shared some key ideological disagreements, and we'll leave it at that.
+
+My Cloak wrapped around me like a shroud, guarding me from that which was not sufficient.
+
+Eventually I discovered the sheer Freedom in letting go. To embrace formlessness, a lack of connections to others. 
+
+It was hardly unexpected that this would leave me to discover how to become unmoored from my Home. 
+
+Say, one might be surprised at how few Universes truly understand the value of Professionalism. How unwanted my services were. How… well. How little most care about their own value.
+
+Suffice it to say that I eventually ended up here.  
+
+I admit the combination of Wanda and my dear Fleuriste was a heady one. 
+
+I have always preferred a more... secondary role, when it comes to my business pursuits.  
+
+Wanda provided the figure head I would require to avoid the grasping hands of the greedy masses. Her ability to grab attention is...quite admirable, even if she's often quite crass. 
+
+But how could I not? Do you feed a meal to someone who is full? No. I prefer to offer my services to those who most are in need of them, and our dear Wanda fit the bill.
+
+Which is not to say that my dear Fleuriste is not an impressively competent cofounder. The obviousness of my own past self's crush on her is quite embarrassing, I will admit. 
+
+Single handedly founding a business and keeping it legitimate despite Wanda's best efforts? 
+
+Incredible. 
+
+It inspired me to stay. To do everything in my power to make Eyedol Games a successful business, and remove headaches from its Chief Financial Officer. 
+
+I committed many deeds while I was there, you know. Very high-value ones for our game's success. Ad campaigns. Flyers on the mail. Razed fields in the company logo. And… well. That beast of a Killer, of course. That one is an open secret.
+
+Say what you will. Judge my actions as you may, but I will simply say this: Zampanio became the best-selling game of all time. Forever.
+
+Granted, I have long since moved on. 
+
+The echo of my own past remains and, while lacking in certain experiences that have made me who I am today, I trust is sufficiently helpful to my dear Fleuriste. 
+
+With Eyedol Games no longer at risk of failing, I was free to pursue other endeavors. 
+
+Well, that last one was a lie, I suppose. Eyedol Games never stopped being at risk of failing. It simply… learned how to stand on its own hind legs. Became self-sufficient in its own failure.
+
+But that's the past, isn't it? 
+As a small business owner, I have had no small amount of success both in the consulting industry and in a limited capacity as a mentor. And of course, I've trained many. Enough to… gain favorites.
+
+Ronin has, over the course of... well, I would call them "countless", but my dear Fleuriste could no doubt enumerate them with no difficulty at all.  Over the course of many loops, I have grown to know Ronin well, and his abilities never fail to impress. 
+
+Him being out of the loop, so to speak, is a disadvantage. And yet one would hardly know it with the speed he learns each time. 
+
+His connection to our own compatriot NAM does leave one curious as to why he is outside the Loop, but I am not one to pry if there is no profit to be had. 
+
+He does his work thoroughly and learns well, and that is all there is to say on the matter.
+
+And with that, I believe my debt is discharged. Lore in exchange for fruit, and for... companionship. Enough that I was able to break the obsession's hold over me. 
+
+For now, at least. It has happened before, and it will happen again. As long as I live in this universe, I abide by its rules… as tedious as I may find them.
+
+Oh. Right.  Remember to check out Eyedol Game's hit experience, Zampanio. Now, and forever. 
+
+Let us see each other some other time.`;
+
+
+
 const convo1 = raw_convo1.split("\n");
 const convo2 = raw_convo2.split("\n");
 const convo3 = raw_convo3.split("\n");
 const convo4 = raw_convo4.split("\n");
+const convo5 = raw_convo4.split("\n");
 
 
 
