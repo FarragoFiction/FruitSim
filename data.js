@@ -23,8 +23,10 @@ But yes, I can sell you anything you like!
 In fact, you could argue that YOU are not selling ME fruit, but I am instead selling you lore. 
 On credit. 
 Keep those fruits coming, by the way. 
-Yes, I'll admit sometimes I worry my skills have dulled! All that restraint must have been for SOMETHING, after all... and they clearly have not stopped me from getting all this fruit.
-They say that the person who wants it the most is the loser of any sales transaction, and I think I might like fruit as much as is physically possible to. Compelled to, even, by every ounce of my body! Or lack thereof.
+Yes, I'll admit sometimes I worry my skills have dulled! 
+All that restraint must have been for SOMETHING, after all... and they clearly have not stopped me from getting all this fruit.
+They say that the person who wants it the most is the loser of any sales transaction, and I think I might like fruit as much as is physically possible to. 
+Compelled to, even, by every ounce of my body! Or lack thereof.
 But that's okay. As much as I love sales, I love fruit even more. More than anything. 
 Keep them coming.
 Don't you dare stop. `;
@@ -64,13 +66,17 @@ And it doesn't even have a face! Isn't that great for you? What a bargain!
 So keep them coming, and I won't have to go off to forage for my own. `;
 
 const raw_convo4 = `You want to hear about me???
-The other me, the BORING me, well , even more boring than REGULAR me is so pitiable. Alone and forever out of the loop. Forever excluded from truly BELONGING in the upper echelon of those who make the decisions of our Universe. 
+The other me, the BORING me, well , even more boring than REGULAR me is so pitiable. Alone and forever out of the loop.
+Forever excluded from truly BELONGING in the upper echelon of those who make the decisions of our Universe. 
 The boring me just works hard and nurses a tiny crush and eats only a paltry amount of fruit. 
 I mean, really! Restraining yourself to just a piece a day? What was I thinking!?
 And Regular Me, the me that I am when the static doesn't buzz in bright and sweet colors, is almost as bad! 
-Really, why would anyone distract themselves from fruit by trying to start a small business? The purity of the Fruit just can't be beat. You know exactly what you want and how to get it, and it's achievable. 
+Really, why would anyone distract themselves from fruit by trying to start a small business? The purity of the Fruit just can't be beat.
+You know exactly what you want and how to get it, and it's achievable. 
 Simple. Deceptively easy. A gateway to pleasure, forever.
-Don't need anyone else at all to cooperate to get fruit. Don't have to figure out what people want and give it to them, even as they ungratefully call you worthless for not knowing the blade. No need to care for those who gladly take your goods out of your hands and turn and give them to those more ‘deserving' than you.
+Don't need anyone else at all to cooperate to get fruit. 
+Don't have to figure out what people want and give it to them, even as they ungratefully call you worthless for not knowing the blade. 
+No need to care for those who gladly take your goods out of your hands and turn and give them to those more 'deserving' than you.
 No. 
 I'm Pure now. Unfiltered. Boiled down to my true essence of what matters. 
 Fruit. 
